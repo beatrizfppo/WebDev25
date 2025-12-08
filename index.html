@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conferência WebDev</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <nav class="nav-menu">
+        <img src="./img/logo-conf-dev 1.png" alt="logo">
+        <i class="fa-solid fa-bars" style="color: #AEFF00;"></i>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#inscricao">Inscrição</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#palestrantes">Palestrantes</a></li>
+            <li><a href="#programacao">Programação</a></li>
+        </ul>
+    </nav>
+
+    <h1>Conferência WebDev 2025</h1>
+
+    <main class="container">
+
+        <section id="home">
+            <p>Venha participar da Conferência WebDev 2025! Ocorrerá em:</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Data:</th> 
+                        <th>Local:</th>
+                    </tr>
+                    <tr>
+                        <td>13/11/2025</td>
+                        <td>Centro de Convenções de Florianópolis/SC</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="inscricao">
+            <h2>Faça sua inscrição!</h2>
+            <form action="">
+                <fieldset>
+                    <label for="">Nome: </label>
+                    <input type="text">
+                    <label for="">Email: </label>
+                    <input type="text">
+                    <label for="">Empresa/Universidade: </label>
+                    <input type="text">
+                    <p>Nível:</p>
+                        <div class="radio-group">
+                            <label><input type="radio" name="nivel" value="estudante">Estudante</label>
+                            <label><input type="radio" name="nivel" value="profissional">Profissional</label>
+                        </div>
+                </fieldset>
+                <button>Inscrever-se</button>
+            </form>
+        </section>
+
+        <section id="sobre">
+            <h2>Sobre o evento</h2>
+            <p>A Conferência WebDev 2025 visa reunir diversos estudantes programadores web para frequentar palestras e muito mais! Organizado pela "Código Eventos", uma startup de eventos de TI fundada por ex-alunos de ciência da computação.</p>
+        </section>
+
+        <section id="palestrantes">
+            <h2>Conheça nossos palestrantes</h2>
+            <article>
+                <h3>Dra. Ada L.</h3>
+                <p>Especialista em Acessibilidade Web</p>
+            </article>
+            <article>
+                <h3>Prof. Alan T.</h3>
+                <p>Mestre em CSS Grid Avançado</p>
+            </article>
+        </section>
+    </main>
+
+    <section id="programação">
+        <h2>Programação</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Horário</th>
+                    <th>Palestra</th>
+                    <th>Palestrante</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>09:00 </td>
+                    <td>O Futuro do HTML Semântico</td>
+                    <td>Dra. Ada L.</td>
+                </tr>
+                <tr>
+                    <td>10:00</td>
+                    <td>A importância de UX e UI</td>
+                    <td>Prof. Alan T.</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </section>
+
+    <footer>
+        <p>© 2025. Todos os direitos reservados</p>
+    </footer>
+    
+</body>
+</html>
