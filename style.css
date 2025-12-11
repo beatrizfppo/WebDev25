@@ -145,6 +145,7 @@ input {
     background-color: inherit;
     border: none;
     border-bottom: 1px solid #F9F9F9;
+    color: #F9F9F9;
 }
 
 #inscricao button {
