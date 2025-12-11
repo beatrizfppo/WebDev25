@@ -44,6 +44,10 @@ ul {
     gap: 10px;
 }
 
+ul a:hover{
+    color: #6a9b00;
+}
+
 i {font-size: 22px;}
 
 a {color: inherit; text-decoration: none;}
@@ -150,16 +154,23 @@ input {
 
 #inscricao button {
     border-radius: 13px;
-    background: linear-gradient(93deg, #4BF2E2 18.92%, #7BF375 100.97%);
+    background: linear-gradient(93deg, #00ffe5 18.92%, #0dff00 100.97%);
     width: 159px;
     height: 51px;
     padding: 10px;
-    color: #F92FA5;
+    color: #ff0095;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: rgba(255, 255, 255, 0.34);
     font-size: 20px;
     font-weight: 700;
+    transition: 0.3s ease;
+    cursor: pointer;
 }
+
+#inscricao button:hover{
+    transform: translateY(-4px) scale(1.03);
+}
+
 
 #sobre {
     display: flex;
@@ -244,10 +255,145 @@ footer {
     height: 40px;
 }
 
+.descricao{
+    max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.45s cubic-bezier(.2,.8,.2,1), opacity 0.35s ease;
+  margin-top: 12px;
+  line-height: 1.5;
+  font-size: 13px;
+  color: #CECECE;
+  text-align: justify;
+}
+
+.palestrante1-img{
+    padding-right: 7%;
+}
+
+.palestrante2-img{
+    padding-left: 7%;
+}
+
+/* MOBILE FIRST: cards fechados */
+#palestrantes article[data-box] {
+    max-height: 120px;
+    overflow: hidden;
+    transition: max-height .3s ease;
+    cursor: pointer;
+}
+
+/* descrição escondida */
+#palestrantes article[data-box] .descricao {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height .3s ease, opacity .25s ease;
+}
+
+/* card aberto */
+#palestrantes article[data-box].open {
+    max-height: 600px;
+}
+
+#palestrantes article[data-box].open .descricao {
+    max-height: 500px;
+    opacity: 1;
+}
+
+
+
 @media (min-width: 768px){
-    button {display: none;}
+    #btn-nav-menu {display: none;}
     .nav-menu-desktop {display: flex; color: #AEFF00; font-size: 22px;}
     main {margin: 3% 15%;}
     .grid {display: grid; grid-template-columns: 50% 50%;}
     h1 {font-size: 36px;}
+
+    /* ====== FORÇA: cards compactos antes do hover, expandem só no hover ====== */
+
+/* garante que heading e parágrafos não adicionem margens inesperadas */
+#palestrantes h3,
+#palestrantes p {
+  margin: 0;
+  padding: 0;
 }
+
+/* card principal */
+#palestrantes article {
+  background-color: #011C40;
+  border: 2px solid #AEFF00;
+  border-radius: 30px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  /* mantem compacto antes do hover */
+  max-height: 130px;
+  overflow: hidden;
+
+  /* garante que essa regra vença regras menos específicas */
+  box-sizing: border-box;
+  transition: max-height 0.45s cubic-bezier(.2,.8,.2,1), padding-bottom 0.35s ease;
+}
+
+/* evita que a imagem redimensione e que contribua para o crescimento */
+#palestrantes article img {
+  height: 96px;
+  flex-shrink: 0; /* não encolhe nem expande */
+}
+
+/* container de texto ocupa o resto do espaço e pode ser recortado */
+#palestrantes .card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 1 auto;
+  min-width: 0;  /* IMPORTANT: permite truncar o conteúdo dentro de flex */
+}
+
+/* subtítulo curto visível sempre */
+#palestrantes .card-container > p {
+  color: #CECECE;
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 8px;
+}
+
+/* descrição longa: escondida via max-height + overflow (mais confiável que só opacity) */
+#palestrantes .descricao {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.45s cubic-bezier(.2,.8,.2,1), opacity 0.35s ease;
+  margin-top: 12px;
+  line-height: 1.5;
+  font-size: 13px;
+  color: #CECECE;
+  text-align: justify;
+}
+
+/* HOVER: expande o card e revela a descrição */
+#palestrantes article:hover {
+  max-height: 520px; /* alto o bastante para o texto aparecer */
+  padding-bottom: 30px;
+}
+
+/* revela a descrição no hover */
+#palestrantes article:hover .descricao {
+  max-height: 400px; /* deve ser maior que o conteúdo real */
+  opacity: 1;
+}
+
+/* opcional: foco por teclado (acessibilidade) — abre também quando em foco */
+#palestrantes article:focus-within {
+  max-height: 520px;
+  padding-bottom: 30px;
+}
+
+#programacao th, #programacao td {
+    padding: 35px 55px;
+}
+}
+

@@ -10,7 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Zen+Dots&display=swap" rel="stylesheet">
 </head>
+
 <body>
+
 
     <nav class="nav-menu">
         <img src="./img/logo-conf-dev 1.png" alt="logo" class="logo">
@@ -74,7 +76,7 @@
                             </div>
                     </fieldset>
                 </form>
-                <button>Inscrever-se</button>
+                <button class="inscricao-btn" >Inscrever-se</button>
             </section>
 
             <section id="sobre">
@@ -84,19 +86,35 @@
 
             <section id="palestrantes">
                 <h2>Conheça nossos palestrantes</h2>
-                <article>
-                    <img src="./img/mulher-sorridente-sentada 1.png" alt="">
+                <article data-box>
+                    <img class="palestrante1-img" src="./img/mulher-sorridente-sentada 1.png" alt="">
                     <div class="card-container">
                         <h3>Dra. Ada L.</h3>
                         <p>Especialista em Acessibilidade Web</p>
+
+                        <div class="descricao">
+                            Dra. Ada L. é pesquisadora e consultora em acessibilidade digital,
+                            dedicada a promover experiências web verdadeiramente inclusivas.
+                            Com mais de 12 anos de atuação no setor de tecnologia, colabora
+                            com empresas, universidades e organizações comprometidas com a
+                            inclusão digital.
+                        </div>
                     </div>
                 </article>
-                <article>
+
+                <article data-box>
                     <div class="card-container">
                         <h3>Prof. Alan T.</h3>
                         <p>Mestre em CSS Grid Avançado</p>
+
+                        <div class="descricao">
+                            Prof. Alan T. é mestre em CSS Grid Avançado e um dos nomes mais
+                            reconhecidos quando o assunto é layout moderno. Com sólida experiência
+                            como desenvolvedor e professor, dedica-se a ensinar técnicas que tornam
+                            interfaces mais organizadas, responsivas e fáceis de manter.
+                        </div>
                     </div>
-                    <img src="./img/prof-alan.png" alt="">
+                    <img class="palestrante2-img" src="./img/prof-alan.png" alt="">
                 </article>
             </section>
 
@@ -137,4 +155,13 @@
     <script src="script.js"></script>    
 
 </body>
+
+<script>
+document.querySelectorAll('#palestrantes article[data-box]').forEach(card => {
+    card.addEventListener('click', () => {
+        card.classList.toggle('open');
+    });
+});
+</script>
+
 </html>
