@@ -12,9 +12,7 @@ body {
     width: 100%;
 }
 
-.logo {
-    width: 78px;
-}
+.logo { width: 78px;}
 
 .nav-menu {
     list-style: none;
@@ -34,6 +32,7 @@ dialog {
     padding: 5%;
     background-color: #011C40;
     color: #AEFF00;
+    margin-left: 62%;
 }
 
 .nav-menu-desktop {display: none;}
@@ -47,8 +46,7 @@ ul {
 
 i {font-size: 22px;}
 
-a {color: inherit; text-decoration: none;
-}
+a {color: inherit; text-decoration: none;}
 
 main {
     display: flex;
@@ -56,7 +54,7 @@ main {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 10px 30px;
+    padding: 2.5% 5%;
 }
 
 h1 {
@@ -115,13 +113,22 @@ h2 {
     line-height: normal;
 }
 
+#inscricao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 form {
     border: 3px solid #AEFF00;
     background: #36454F;
     box-shadow: -5px -5px 20px 0 rgba(174, 255, 0, 0.63), 5px 5px 20px 0 rgba(174, 255, 0, 0.63);
     display: flex;
     margin: 31px 0;
-    width: auto;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
 }
 
 fieldset {
@@ -206,7 +213,7 @@ h3 {
 }
 
 #programacao {
-    margin-top: 40px;
+    margin-top: 100px;
 }
 
 #programacao table {
